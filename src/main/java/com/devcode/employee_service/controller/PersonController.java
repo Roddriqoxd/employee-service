@@ -22,7 +22,4 @@ public class PersonController {
     public Person createBasicEmployee(@RequestBody Person person) {
         return personUseCase.createUser(person);
     }
-
-
-
 }

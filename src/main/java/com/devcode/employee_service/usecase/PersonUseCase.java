@@ -12,7 +12,7 @@ public class PersonUseCase {
 
     private PersonRepository personRepository;
 
-    public Person createUser(Person person){
+    public Person createUser(Person person) {
         Person newPerson = new Person();
 
         newPerson.setFirstName(person.getFirstName());
@@ -24,7 +24,7 @@ public class PersonUseCase {
 
     }
 
-    private Employee createNewEmployee(){
+    private Employee createNewEmployee() {
         Employee employee = new Employee();
 
         employee.setUsedTime(0L);
@@ -34,6 +34,6 @@ public class PersonUseCase {
         employee.setIsSupervisor(false);
         employee.setSupervisorId(null);
 
-        return  employee;
+        return employee;
     }
 }
