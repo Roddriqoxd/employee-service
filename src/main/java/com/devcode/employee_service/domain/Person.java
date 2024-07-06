@@ -14,7 +14,7 @@ import lombok.Setter;
 @PrimaryKeyJoinColumns(
         {@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")}
 )
-public abstract class Person extends User {
+public class Person extends User {
 
     private String firstName;
     private String lastName;

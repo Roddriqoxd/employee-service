@@ -16,10 +16,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
     private Long id;
-
     @Temporal(TemporalType.DATE)
     private Date dateAdmission;
-
     private String position;
     private Boolean isSupervisor;
     private Long usedTime;
