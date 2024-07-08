@@ -2,26 +2,37 @@ package com.devcode.employee_service.usecase;
 
 import com.devcode.employee_service.domain.Employee;
 import com.devcode.employee_service.domain.Person;
+import com.devcode.employee_service.repository.EmployeeRepository;
 import com.devcode.employee_service.repository.PersonRepository;
+import com.devcode.employee_service.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
 @Service
 public class PersonUseCase {
+    @Autowired
+    private PersonService personService;
 
+    @Autowired
     private PersonRepository personRepository;
 
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+
     public Person createUser(Person person) {
+        Employee employee = createNewEmployee();
         Person newPerson = new Person();
 
         newPerson.setFirstName(person.getFirstName());
         newPerson.setLastName(person.getLastName());
         newPerson.setNumber(person.getNumber());
-        newPerson.setEmployee(createNewEmployee());
+        newPerson.setEmployee(employee);
 
-        return newPerson;
-
+        return personService.createPerson(newPerson);
     }
 
     private Employee createNewEmployee() {
@@ -34,6 +45,6 @@ public class PersonUseCase {
         employee.setIsSupervisor(false);
         employee.setSupervisorId(null);
 
-        return employee;
+        return employeeRepository.save(employee);
     }
 }

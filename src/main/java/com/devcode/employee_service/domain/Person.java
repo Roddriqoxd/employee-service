@@ -11,9 +11,6 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "persons")
-@PrimaryKeyJoinColumns(
-        {@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")}
-)
 public class Person extends User {
 
     private String firstName;

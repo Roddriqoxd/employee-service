@@ -28,7 +28,7 @@ public abstract class User {
     private Date LoginOut;
     private String userType;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "employee_id", referencedColumnName = "employee_id", nullable = false)
     private Employee employee;
 }
