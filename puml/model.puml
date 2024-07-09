@@ -1,25 +1,50 @@
 @startuml
-set namespaceSeparator none
+!pragma layout smetana
 
 hide method
+
+enum UserType {
+    ADMIN
+    EMPLOYEE
+}
+
+enum Position {
+    PROJECT_MANAGER
+    ARCHITECT
+    QA_ENGINEER
+    DEVOPS
+    IT
+    MANAGEMENT
+    DEVELOPER
+}
 
 namespace employeeService.domain {
     abstract class User {
         - id: Long
         - email: String
         - password: String
+        - userType: UserType
+        - isFirstLogin: Boolean
+        loginIn: Date
+        loginOut: Date
         - employee: Employee
+
     }
 
     class Person {
         - firstName: String
         - lastName: String
+        - phoneNumber: Long
     }
 
     class Employee {
         - id: Long
         - dateAdmission: Long
         - supervisorId: Long
+        - Position: Position
+        - isSupervisor: Boolean
+        - freeTime: Long
+        - usedTime: Long
     }
 
     Person -up-|> User
