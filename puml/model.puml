@@ -1,0 +1,29 @@
+@startuml
+set namespaceSeparator none
+
+hide method
+
+namespace employeeService.domain {
+    abstract class User {
+        - id: Long
+        - email: String
+        - password: String
+        - employee: Employee
+    }
+
+    class Person {
+        - firstName: String
+        - lastName: String
+    }
+
+    class Employee {
+        - id: Long
+        - dateAdmission: Long
+        - supervisorId: Long
+    }
+
+    Person -up-|> User
+    User *-right-> Employee: employee
+    Employee *-right-> Employee: supervisorId
+}
+@enduml
