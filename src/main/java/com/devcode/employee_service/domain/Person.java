@@ -14,7 +14,9 @@ import lombok.Setter;
 public class Person extends User {
 
     private String firstName;
+
     private String lastName;
+
     private Long number;
 
 }

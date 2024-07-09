@@ -10,15 +10,20 @@ import java.util.Date;
 @Setter
 @Entity
 @Table(name = "users")
-@Inheritance( strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String email;
+
     private String password;
-    private String role;
+
+    private Role role;
+
+    @Column(name = "is_first_login")
     private Boolean isFirstLogin;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -26,6 +31,7 @@ public abstract class User {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date LoginOut;
+
     private String userType;
 
     @OneToOne(fetch = FetchType.EAGER, optional = false)

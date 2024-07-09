@@ -3,6 +3,7 @@ package com.devcode.employee_service.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.aspectj.weaver.Position;
 
 import java.util.Date;
 
@@ -16,11 +17,17 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
     private Long id;
+
     @Temporal(TemporalType.DATE)
     private Date dateAdmission;
-    private String position;
+
+    private Position position;
+
     private Boolean isSupervisor;
+
     private Long usedTime;
+
     private Long freeTime;
+
     private Long supervisorId;
 }
