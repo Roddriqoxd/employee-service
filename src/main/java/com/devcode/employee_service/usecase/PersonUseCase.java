@@ -2,6 +2,7 @@ package com.devcode.employee_service.usecase;
 
 import com.devcode.employee_service.domain.Employee;
 import com.devcode.employee_service.domain.Person;
+import com.devcode.employee_service.domain.UserType;
 import com.devcode.employee_service.repository.EmployeeRepository;
 import com.devcode.employee_service.repository.PersonRepository;
 import com.devcode.employee_service.service.PersonService;
@@ -39,7 +40,7 @@ public class PersonUseCase {
         Employee employee = new Employee();
 
         employee.setUsedTime(0L);
-        employee.setPosition("Developer");
+        employee.setUserType(UserType.EMPLOYEE);
         employee.setDateAdmission(new Date());
         employee.setFreeTime(30L);
         employee.setIsSupervisor(false);

@@ -21,7 +21,7 @@ public class Employee {
     @Temporal(TemporalType.DATE)
     private Date dateAdmission;
 
-    private Position position;
+    private UserType userType;
 
     private Boolean isSupervisor;
 
