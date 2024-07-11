@@ -15,4 +15,8 @@ public class PersonService {
         return personRepository.save(person);
     }
 
+    public Person findAccount(String email, String password) {
+        return personRepository.findByEmailAndPassword(email,password);
+    }
+
 }

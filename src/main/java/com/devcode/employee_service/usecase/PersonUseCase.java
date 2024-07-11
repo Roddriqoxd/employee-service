@@ -31,6 +31,9 @@ public class PersonUseCase {
         newPerson.setFirstName(person.getFirstName());
         newPerson.setLastName(person.getLastName());
         newPerson.setNumber(person.getNumber());
+        newPerson.setRole(person.getRole());
+        newPerson.setEmail(person.getEmail());
+        newPerson.setPassword(person.getPassword());
         newPerson.setEmployee(employee);
 
         return personService.createPerson(newPerson);

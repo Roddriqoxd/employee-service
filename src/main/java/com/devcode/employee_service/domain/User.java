@@ -32,8 +32,6 @@ public abstract class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date LoginOut;
 
-    private String userType;
-
     @OneToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "employee_id", referencedColumnName = "employee_id", nullable = false)
     private Employee employee;
