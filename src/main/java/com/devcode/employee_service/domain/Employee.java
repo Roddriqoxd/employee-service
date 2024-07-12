@@ -1,15 +1,17 @@
 package com.devcode.employee_service.domain;
 
+import com.devcode.employee_service.domain.enums.UserType;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.aspectj.weaver.Position;
 
 import java.util.Date;
 
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
 @Table(name = "employees")
 public class Employee {
 
@@ -30,4 +32,8 @@ public class Employee {
     private Long freeTime;
 
     private Long supervisorId;
+
+    public Employee() {
+
+    }
 }

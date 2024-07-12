@@ -2,7 +2,7 @@ package com.devcode.employee_service.usecase;
 
 import com.devcode.employee_service.domain.Employee;
 import com.devcode.employee_service.domain.Person;
-import com.devcode.employee_service.domain.UserType;
+import com.devcode.employee_service.domain.enums.UserType;
 import com.devcode.employee_service.repository.EmployeeRepository;
 import com.devcode.employee_service.repository.PersonRepository;
 import com.devcode.employee_service.service.PersonService;
@@ -18,7 +18,6 @@ public class PersonUseCase {
 
     @Autowired
     private PersonRepository personRepository;
-
 
     @Autowired
     private EmployeeRepository employeeRepository;

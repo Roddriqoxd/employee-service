@@ -1,4 +1,4 @@
-package com.devcode.employee_service.domain;
+package com.devcode.employee_service.domain.enums;
 
 public enum Role {
     PROJECT_MANAGER,
