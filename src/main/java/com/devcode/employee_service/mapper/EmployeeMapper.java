@@ -9,8 +9,8 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface EmployeeMapper {
 
-    EmployeeMapper mapper = Mappers.getMapper(EmployeeMapper.class);
+    EmployeeMapper INSTANCE = Mappers.getMapper(EmployeeMapper.class);
 
     @Mapping(target = "userType",source = "user")
-    EmployeeDto employeeDto(Employee employee);
+    EmployeeDto employeeDtos(Employee employee);
 }

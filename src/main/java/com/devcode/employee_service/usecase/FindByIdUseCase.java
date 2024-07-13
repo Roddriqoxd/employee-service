@@ -15,7 +15,7 @@ public class FindByIdUseCase {
 
     public EmployeeDto findById(Long id){
         Employee employee = employeeService.findById(id);
-        EmployeeDto employeeDto = EmployeeMapper.mapper.employeeDto(employee);
+        EmployeeDto employeeDto = EmployeeMapper.INSTANCE.employeeDtos(employee);
         return employeeDto;
     }
 }

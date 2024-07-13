@@ -10,7 +10,7 @@ public class EmployeeDto {
 
     private Long id;
 
-    private UserType user;
+    private String user;
 
     private Long usedTime;
 
