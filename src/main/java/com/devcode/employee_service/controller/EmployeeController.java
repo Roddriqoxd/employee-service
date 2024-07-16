@@ -2,7 +2,6 @@ package com.devcode.employee_service.controller;
 
 import com.devcode.employee_service.domain.Employee;
 import com.devcode.employee_service.dto.EmployeeDto;
-import com.devcode.employee_service.mapper.EmployeeMapper;
 import com.devcode.employee_service.service.EmployeeService;
 import com.devcode.employee_service.usecase.FindByIdUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/find/{id}")
-    private Employee getEmployeeInformation(@PathVariable Long id) {
-        return employeeService.findById(id);
+    private EmployeeDto getEmployeeInformation(@PathVariable Long id) {
+        return findByIdUseCase.findById(id);
     }
 }
