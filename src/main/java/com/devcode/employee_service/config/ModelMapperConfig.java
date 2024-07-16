@@ -1,4 +1,4 @@
-package com.devcode.employee_service.mapper;
+package com.devcode.employee_service.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
